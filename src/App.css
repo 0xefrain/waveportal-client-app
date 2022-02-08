@@ -1,0 +1,73 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 64px;
+
+
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+
+}
+
+.header {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 50px;
+  
+
+}
+
+.bio {
+  
+  text-align: center;
+  color: gray;
+  margin-top: 16px;
+  color: #FFFFFF;
+  font-size: 25px;
+}
+
+.waveButton {
+  margin-top: 50px;
+  align-items: center;
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 19px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.waveButton:active,
+.waveButton:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .waveButton {
+    font-size: 24px;
+    min-width: 196px;
+  }
+
+}
