@@ -1,4 +1,4 @@
-# web3 Wave Portal 👋 
+# Web3 Wave Portal 👋 
 
 ### **Welcome!**
 Its my waveportal, clone this repo and follow these commands:
