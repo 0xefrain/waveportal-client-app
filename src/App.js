@@ -63,29 +63,6 @@ const App = () => {
     }
   };
 
-  const getTotalWaves = async () => {
-		try {
-			const { ethereum } = window;
-
-			if (ethereum) {
-				const provider = new ethers.providers.Web3Provider(ethereum);
-				const signer = provider.getSigner();
-				const wavePortalContract = new ethers.Contract(
-					contractAddress,
-					contractABI,
-					signer
-				);
-
-				await wavePortalContract
-					.getTotalWaves()
-					.then((waves) =>
-						setTotalWaves(ethers.BigNumber.from(waves).toString())
-					);
-			}
-		} catch (e) {
-			console.log(e);
-		}
-	}; 
 
   const getAllWaves = async () => {
 		try {
@@ -162,9 +139,7 @@ const App = () => {
   }
 
   useEffect(() => {
-		checkIfWalletIsConnected();
-		getTotalWaves();
-		getAllWaves();
+		checkIfWalletIsConnected();				
 	}, [totalWaves, currentAccount]);
 
   return (
