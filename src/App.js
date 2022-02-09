@@ -181,7 +181,7 @@ const App = () => {
           I am Efrain and I'm gonna create amazing projects on Web3 !
         </div>
         <div className="earn">
-          There is a 50% chance you'll get 0.001 ETH airdropped when you wave, 💸!
+          There is a 50% chance you'll get 0.001 ETH airdropped when you wave, !
         </div>
 
         <div id="message-form">
@@ -223,7 +223,7 @@ const App = () => {
         <div className="totalwaves" >
 
 
-          {(totalWaves > 0) && <h2>Total Waves: {totalWaves} Thanks!💓</h2>}
+          {(totalWaves > 0) && <h2>Total Waves: {totalWaves} Thanks!</h2>}
 
 
 
