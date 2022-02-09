@@ -19,7 +19,7 @@ const App = () => {
 
 
 
-  const contractAddress = "0x7Ed3c7A560c3DC104d7153101c8201778E8b2232";
+  const contractAddress = "0x955665B28bd8C0D8c8dB44198dB3FD0E798b1C22";
   const contractABI = abi.abi;
 
   const checkIfWalletIsConnected = async () => {
@@ -49,12 +49,9 @@ const App = () => {
       console.log(error);
     }
   }
-
   /**
   * Implement your connectWallet method here
   */
-
-
   const connectWallet = async () => {
     try {
       const { ethereum } = window;
@@ -83,11 +80,8 @@ const App = () => {
 
         const wavePortalContract = new ethers.Contract(contractAddress, contractABI, signer);
 
-
-
         let count = await wavePortalContract.getTotalWaves();
         console.log("Retrieved total wave count...", count.toNumber());
-
         /*
        * Execute the actual wave from your smart contract
        */
@@ -108,7 +102,6 @@ const App = () => {
       console.log(error);
     }
   }
-
   /*
 * Create a method that gets all waves from your contract
 */
@@ -119,13 +112,10 @@ const App = () => {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         const wavePortalContract = new ethers.Contract(contractAddress, contractABI, signer);
-
         /*
          * Call the getAllWaves method from your Smart Contract
          */
         const waves = await wavePortalContract.getAllWaves();
-
-
         /*
          * We only need address, timestamp, and message in our UI so let's
          * pick those out
@@ -138,7 +128,6 @@ const App = () => {
             message: wave.message
           });
         });
-
         /*
          * Store our data in React State
          */
@@ -156,12 +145,9 @@ const App = () => {
   }
 
 
-
   useEffect(() => {
     checkIfWalletIsConnected();
   }, [])
-
-
 
   return (
     <div className="mainContainer">
@@ -177,12 +163,10 @@ const App = () => {
           I am Efrain and I'm gonna create amazing projects on Web3 !
         </div>
 
-
         <div id="message-form">
 
           <form >
             <fieldset>
-
               <header>
                 <h3>Leave a message in the below box!</h3>
               </header>
@@ -194,8 +178,8 @@ const App = () => {
                 onChange={handleChange}
               />
             </fieldset>
-
           </form>
+
         </div>
 
         <button className="waveButton" onClick={wave}>
@@ -205,15 +189,14 @@ const App = () => {
         * If there is no currentAccount render this button
         */}
         {!currentAccount && (
-          <button className="waveButton" onClick={connectWallet}>
+          <button className="wallet" onClick={connectWallet}>
             Connect Wallet
           </button>
 
         )}
 
+
         {(totalWaves > 0) && <h2>Total Waves: {totalWaves}</h2>}
-
-
 
         {allWaves.map((wave, index) => {
           return (
@@ -223,9 +206,6 @@ const App = () => {
               <div>Message: {wave.message}</div>
             </div>)
         })}
-
-
-
 
       </div>
     </div>
